@@ -13,9 +13,13 @@ sqlalchemy = "^2.0.35"
 pysqlite3 = "^0.5.3"
 python-dotenv = "^1.0.1"
 mysqlclient = "^2.2.4"
-
-
 inquirerpy = "^0.3.4"
+uvicorn = "^0.31.1"
+requests = "^2.32.3"
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.13.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -27,4 +31,4 @@ select = ["ANN"]
 install = "userfetchapi.install:install"
 
 [tool.taskipy.tasks]
-run = "uvicorn userfetchapi.main:app --reload"
+run = "fastapi dev userfetchapi/main.py"
