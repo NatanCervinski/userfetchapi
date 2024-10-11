@@ -47,7 +47,7 @@ Durante a execução, você será solicitado a:
 
 Após a instalação e configuração, você pode iniciar o servidor FastAPI:
 ```bash
-uvicorn userfetchapi.main:app --reload
+poetry run uvicorn userfetchapi.main:app --reload
 ```
 O servidor estará disponível em [localhost](http://127.0.0.1:8000).
 

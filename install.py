@@ -80,7 +80,7 @@ def install() -> None:
         populate_database(db, user_count)
 
     print(
-        "Fim da configuração. Para rodar a API, execute 'uvicorn userfetchapi.main:app --reload'."
+        "Fim da configuração. Para rodar a API, execute 'poetry run uvicorn userfetchapi.main:app --reload'."
     )
 
 
