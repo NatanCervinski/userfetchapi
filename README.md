@@ -10,7 +10,7 @@ UserFetchAPI é uma aplicação de exemplo criada com **FastAPI** e **SQLAlchemy
 
 ## Requisitos
 
-- **Python 3.12.***
+- **Python 3.10+**
 - **[Poetry](https://python-poetry.org/)** (para gerenciar dependências e ambientes virtuais)
 
 ## Instalação
