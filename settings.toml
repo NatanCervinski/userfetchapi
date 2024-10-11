@@ -1,0 +1,6 @@
+[SQLITE]
+DATABASE_URL = "sqlite:///./test.db"  
+
+[MYSQL]
+DATABASE_URL= "@jinja mysql://{{env.DB_USER}}:{{env.DB_PASS}}@{{env.DB_HOST}}/{{env.DB_NAME}}"
+

@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "userfetchapi"
+version = "0.1.0"
+description = ""
+authors = ["NatanCervinski <natanscer@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.*"
+fastapi = {extras = ["standard"], version = "^0.115.0"}
+dynaconf = "^3.2.6"
+sqlalchemy = "^2.0.35"
+pysqlite3 = "^0.5.3"
+python-dotenv = "^1.0.1"
+mysqlclient = "^2.2.4"
+
+
+inquirerpy = "^0.3.4"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = ["ANN"]
+
+[tool.poetry.scripts]
+install = "userfetchapi.install:install"
+
+[tool.taskipy.tasks]
+run = "uvicorn userfetchapi.main:app --reload"
