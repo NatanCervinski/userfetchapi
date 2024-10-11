@@ -59,7 +59,8 @@ def install() -> None:
             DB_HOST={db_host}\n
             DB_NAME={db_name}\n
             """)
-    settings.env = env
+    settings.setenv(env)
+
     print("Configuração do banco de dados salva!")
 
     user_count = inquirer.text(
