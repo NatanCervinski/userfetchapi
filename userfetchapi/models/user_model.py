@@ -19,4 +19,6 @@ class User(Base):
 engine = create_engine(settings.DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-Base.metadata.create_all(bind=engine)
+
+def create_db() -> None:
+    Base.metadata.create_all(bind=engine)

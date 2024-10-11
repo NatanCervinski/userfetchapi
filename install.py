@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 from config import settings
-from userfetchapi.models.user_model import SessionLocal
+from userfetchapi.models.user_model import SessionLocal, create_db
 from userfetchapi.services.user_service import fetch_and_store_users, verify_database
 
 stop_loading = False
@@ -69,7 +69,7 @@ def install() -> None:
 
     db = SessionLocal(bind=engine)
 
-    print(f"O banco de dados já possui {verify_database(db)} usuário(s)?")
+    create_db()
 
     confirm = inquirer.confirm(
         message=f"O banco de dados já possui {verify_database(db)} usuário(s). Continuar?",
@@ -80,7 +80,7 @@ def install() -> None:
         populate_database(db, user_count)
 
     print(
-        "Fim da configuração. Para rodar a API, execute 'poetry run uvicorn userfetchapi.main:app --reload'."
+        "\nFim da configuração. Para rodar a API, execute 'poetry run uvicorn userfetchapi.main:app --reload'."
     )
 
 
