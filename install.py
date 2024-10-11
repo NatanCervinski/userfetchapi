@@ -72,13 +72,16 @@ def install() -> None:
     print(f"O banco de dados já possui {verify_database(db)} usuário(s)?")
 
     confirm = inquirer.confirm(
-        f"O banco de dados já possui {verify_database(db)} usuário(s). Continuar?"
+        message=f"O banco de dados já possui {verify_database(db)} usuário(s). Continuar?",
+        default=True,
     ).execute()
 
     if confirm:
         populate_database(db, user_count)
 
-    print("Fim da configuração. Para rodar a API, execute 'poetry run'.")
+    print(
+        "Fim da configuração. Para rodar a API, execute 'uvicorn userfetchapi.main:app --reload'."
+    )
 
 
 if __name__ == "__main__":
