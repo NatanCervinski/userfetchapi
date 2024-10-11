@@ -4,6 +4,7 @@ import time
 
 from InquirerPy import inquirer
 from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
 from config import settings
 from userfetchapi.models.user_model import SessionLocal
@@ -20,7 +21,7 @@ def loading_animation() -> None:
         time.sleep(0.1)
 
 
-def populate_database(db, user_count: int) -> None:
+def populate_database(db: Session, user_count: int) -> None:
     global stop_loading
     stop_loading = False
     loading_thread = threading.Thread(target=loading_animation)
